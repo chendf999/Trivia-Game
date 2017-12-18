@@ -1,0 +1,41 @@
+
+body {
+  width: 60%;
+  background-color: grey;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.wrap {
+  height: 400px;
+  background-color: white;
+  padding: 5%;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.timer {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.trivia .h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.question-result {
+  margin-bottom: 20px;
+}
+
+.choice h2 {
+  padding: 10px;
+  margin: 5px 50px;
+}
+
+.choice h2:hover{
+  outline: black 1px solid;
+}
