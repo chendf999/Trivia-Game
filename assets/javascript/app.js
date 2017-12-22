@@ -19,78 +19,78 @@ $(document).ready(function() {
       c: 'Akhenaton',
       d: 'King Khufu',
     },
-    //
-    // question3 = {
-    //   question: 'Identify which of the following provided protection against attack from invaders for the Egyptians. ',
-    //   answer: 'Deserts and cataracts',
-    //   a: 'Fertile soil',
-    //   b: 'Papyrus fields',
-    //   c: 'Deserts and cataracts',
-    //   d: 'Pyramids',
-    // },
-    //
-    // question4 = {
-    //   question: 'Ahkenaton and King Tut represent a line of rulers from the same family. This is called a ___.',
-    //   answer: 'Dynasty',
-    //   a: 'Temple',
-    //   b: 'Pyramid',
-    //   c: 'Social class',
-    //   d: 'Dynasty',
-    // },
-    //
-    // question5 = {
-    //   question: 'The Nile River flows from ____ to ____.',
-    //   answer: 'South to north',
-    //   a: 'South to north',
-    //   b: 'North to south',
-    //   c: 'West to east',
-    //   d: 'East to west',
-    // },
-    //
-    // question6 = {
-    //   question: 'The Egyptians willingly served their all-powerful pharaoh because ______.',
-    //   answer: 'The pharaoh was a god on earth.',
-    //   a: 'The pharaoh was a god on earth.',
-    //   b: 'The pharaoh\'s wealth meant power.',
-    //   c: 'They didn\'t like to follow the priests.',
-    //   d: 'They could not elect a new pharaoh for another four years.',
-    // },
-    //
-    // question7 = {
-    //   question: 'The ancient Egyptian civilization was the first to have specialists in the field of ____.',
-    //   answer: 'Mathematics',
-    //   a: 'Mathematics',
-    //   b: 'Irrigation',
-    //   c: 'Astronomy',
-    //   d: 'Medicine',
-    // },
-    //
-    // question8 = {
-    //   question: 'Isis ruled over the Underworld with her husband, _____.',
-    //   answer: 'Osiris',
-    //   a: 'Hapi',
-    //   b: 'Osiris',
-    //   c: 'Deumutef',
-    //   d: 'Quebensenuf',
-    // },
-    //
-    // question9 = {
-    //   question: 'If you were a scribe in ancient Egypt, what type of writing would you use?',
-    //   answer: 'Hieroglyphics',
-    //   a: 'Arabic',
-    //   b: 'Cuneiform',
-    //   c: 'Nubian',
-    //   d: 'Hieroglyphics',
-    // },
-    //
-    // question10 = {
-    //   question: 'Which type of reed plant would you use to make sandals, baskets, river rafts, and paper in ancient Egypt?',
-    //   answer: 'Papyrus',
-    //   a: 'Papyrus',
-    //   b: 'Canary grass',
-    //   c: 'Yarrow',
-    //   d: 'Knotweed',
-    // }
+
+    question3 = {
+      question: 'Identify which of the following provided protection against attack from invaders for the Egyptians. ',
+      answer: 'Deserts and cataracts',
+      a: 'Fertile soil',
+      b: 'Papyrus fields',
+      c: 'Deserts and cataracts',
+      d: 'Pyramids',
+    },
+
+    question4 = {
+      question: 'Ahkenaton and King Tut represent a line of rulers from the same family. This is called a ___.',
+      answer: 'Dynasty',
+      a: 'Temple',
+      b: 'Pyramid',
+      c: 'Social class',
+      d: 'Dynasty',
+    },
+
+    question5 = {
+      question: 'The Nile River flows from ____ to ____.',
+      answer: 'South to north',
+      a: 'South to north',
+      b: 'North to south',
+      c: 'West to east',
+      d: 'East to west',
+    },
+
+    question6 = {
+      question: 'The Egyptians willingly served their all-powerful pharaoh because ______.',
+      answer: 'The pharaoh was a god on earth.',
+      a: 'The pharaoh was a god on earth.',
+      b: 'The pharaoh\'s wealth meant power.',
+      c: 'They didn\'t like to follow the priests.',
+      d: 'They could not elect a new pharaoh for another four years.',
+    },
+
+    question7 = {
+      question: 'The ancient Egyptian civilization was the first to have specialists in the field of ____.',
+      answer: 'Medicine',
+      a: 'Mathematics',
+      b: 'Irrigation',
+      c: 'Astronomy',
+      d: 'Medicine',
+    },
+
+    question8 = {
+      question: 'Isis ruled over the Underworld with her husband, _____.',
+      answer: 'Osiris',
+      a: 'Hapi',
+      b: 'Osiris',
+      c: 'Deumutef',
+      d: 'Quebensenuf',
+    },
+
+    question9 = {
+      question: 'If you were a scribe in ancient Egypt, what type of writing would you use?',
+      answer: 'Hieroglyphics',
+      a: 'Arabic',
+      b: 'Cuneiform',
+      c: 'Nubian',
+      d: 'Hieroglyphics',
+    },
+
+    question10 = {
+      question: 'Which type of reed plant would you use to make sandals, baskets, river rafts, and paper in ancient Egypt?',
+      answer: 'Papyrus',
+      a: 'Papyrus',
+      b: 'Canary grass',
+      c: 'Yarrow',
+      d: 'Knotweed',
+    }
   ];
 
 
@@ -98,6 +98,7 @@ $(document).ready(function() {
   var countdown;
   var questionIndex = 0;
   var questionObject;
+  var imageSrc;
 
   var correct = 0;
   var incorrect = 0;
@@ -129,13 +130,13 @@ $('.start').on('click', function(){
 
       var question = trivia[questionIndex].question;
       questionObject = trivia[questionIndex];
+	  imageSrc = './assets/images/question' + (questionIndex+1) + '.jpg';
 
       $('.question-result').html(question);
 
       var arr = Object.values(questionObject);
       for (var i=2; i<arr.length; i++){
-        $('.choice').append('<h2>'+ arr[i] +'</h2>');
-        console.log(arr[i]);
+        $('.choice').append('<p>'+ arr[i] +'</p>');
       }
 
       timeRemain = 30;
@@ -148,7 +149,7 @@ $('.start').on('click', function(){
 | question is answered
 -------------------------------------*/
 
-  $(document).on('click','.choice h2', userChoose);
+  $(document).on('click','.choice p', userChoose);
   function userChoose(){
     timeStop();
 
@@ -157,8 +158,10 @@ $('.start').on('click', function(){
 
     /* correct -------------------------------*/
     if (userAnswer === correctAnswer){
-      $('.question-result').html('Correct');
-      $('.choice h2').detach();
+      $('.question-result').html('Correct!');
+      $('.choice').empty();
+	  showImage();
+
       correct++;
 
       questionIndex++;
@@ -176,13 +179,20 @@ $('.start').on('click', function(){
 
   function showAnswer(){
     var correctAnswer = questionObject.answer;
-    $('.answer').html('<h2>The Correct Answer was: ' + correctAnswer + '!</h2>');
+    $('.answer').html('<p>The Correct Answer was: ' + correctAnswer + '!</p>');
 
-    $('.choice h2').detach();
+    $('.choice').empty();
     $('.answer').show();
+	showImage();
 
     questionIndex++;
     setTimeout(getQuestion,3000);
+  }
+
+  function showImage(){
+	  var questionImage = document.createElement('img');
+      $(questionImage).appendTo('.question-result');
+	  $('.trivia img').attr('src', imageSrc);
   }
 
 /*-------------------------------------

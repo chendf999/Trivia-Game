@@ -1,20 +1,53 @@
 
+@import url('https://fonts.googleapis.com/css?family=Acme|Cabin');
+
+html { height:100%; width: 100%;}
+
 body {
-  width: 60%;
-  background-color: grey;
-  margin: 50px auto;
   text-align: center;
+  background: url('../images/background.jpg') center center no-repeat;
+  background-size: auto 100%;
+  background-color: black;
 }
 
-.wrap {
-  height: 400px;
-  background-color: white;
-  padding: 5%;
+@media screen and (min-width:1280px){
+  body { background-size: 100% auto;}
+}
+/* @media <= 630 defined at bottom -------------------------------*/
+
+p {
+	font-family: 'Cabin';
+    font-size: 18px;
+	line-height: 28px;
 }
 
 h1 {
-  font-size: 30px;
-  margin-bottom: 20px;
+  font-size: 60px;
+  margin-top: 30px; margin-bottom: -10px;
+  font-family: 'Acme', sans-serif;
+  letter-spacing: 10px;
+  padding: 5px;
+  color: #bf945a;
+
+  background: -webkit-linear-gradient(#eee, #bf945a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px #763b17;
+}
+
+h2 {
+	font-family: 'Cabin';
+    font-size: 20px;
+	line-height: 30px;
+}
+
+.wrap {
+  margin: 0 auto;
+  padding: 7% 20% 13% 20%;
+  background: url('../images/scroll.png') no-repeat center;
+  background-size: 90% 90%;
+  height: 320px;
+  max-width: 400px;
 }
 
 .timer {
@@ -22,22 +55,17 @@ h1 {
   margin-bottom: 20px;
 }
 
-.trivia .h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
+.choice p { padding: 10px;}
+.choice p:hover { outline: 1px solid black;}
 
 .question-result {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
-.choice h2 {
-  padding: 10px;
-  margin: 5px 50px;
-}
-
-.choice h2:hover{
-  outline: black 1px solid;
+.trivia img {
+	height: 180px;
+	margin: 20px auto;
+	display: block;
 }
 
 .btn {
@@ -45,10 +73,22 @@ h1 {
   width: 160px;
   outline: black solid 1px;
   padding: 10px;
-  margin: 20px auto;
+  margin: 40px auto;
 }
 
 .btn:hover {
   background-color: grey;
   color: white;
+}
+
+@media screen and (max-width: 630px) {
+	.wrap { height: 500px; padding: 20%;}
+
+	h1 {
+		font-size: 40px;
+		line-height: 50px;
+		padding: 0 10px;
+		margin-top: 20px; margin-bottom: -20px;
+		-webkit-text-stroke: 1px #bf945a;
+	}
 }
